@@ -48,12 +48,12 @@ img{max-width:100%}
 <script>
   /* ===== 링크 설정: 여기 주소만 바꾸면 페이지의 모든 'B2B 문의하기' 버튼에 적용됩니다 ===== */
   var LINKS = {
-    inquiry: "https://forms.gle/YsHVHmTJ12rR3SC17"  /* B2B 문의 구글폼 */
+    inquiry: "inquiry.html"  /* B2B 문의 페이지 (외부 링크로 바꾸려면 https:// 주소 입력) */
   };
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[data-link]").forEach(function (a) {
       var url = LINKS[a.getAttribute("data-link")];
-      if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+      if (url) { a.href = url; if (/^https?:/.test(url)) { a.target = "_blank"; a.rel = "noopener"; } }
     });
   });
 </script>
@@ -271,7 +271,7 @@ img{max-width:100%}
 <p style="margin: 0; font-size: 20px; color: #6B6460">※ 제작 범위와 비용, 일정은 상담 후 확정됩니다.</p>
 </div>
 <div>
-<a href="https://forms.gle/YsHVHmTJ12rR3SC17" target="_blank" rel="noopener" data-link="inquiry" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 32px; border-radius: 999px; background: #3A302C; color: #FFFFFF; font-size: 30px; font-weight: 500; text-decoration: none; height: 71px">B2B 문의하기</a>
+<a href="inquiry.html" data-link="inquiry" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 32px; border-radius: 999px; background: #3A302C; color: #FFFFFF; font-size: 30px; font-weight: 500; text-decoration: none; height: 71px">B2B 문의하기</a>
 </div>
 </div>
 </div>
@@ -348,11 +348,11 @@ img{max-width:100%}
 <section id="bottom-cta" style="margin-top: 72px; background: #3A302C">
 <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
 <h2 style="margin: 0; font-size: clamp(26px, 3.4vw, 36px); font-weight: 700; line-height: 1.4; color: #FFFFFF; letter-spacing: -0.02em">올해의 선물,<br>Herit Scent와 준비해 보세요</h2>
-<a href="https://forms.gle/YsHVHmTJ12rR3SC17" target="_blank" rel="noopener" data-link="inquiry" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 32px; border-radius: 999px; background: #FFFFFF; color: #2B2523; font-size: 30px; font-weight: 500; text-decoration: none; height: 72px">B2B 문의하기</a>
+<a href="inquiry.html" data-link="inquiry" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 32px; border-radius: 999px; background: #FFFFFF; color: #2B2523; font-size: 30px; font-weight: 500; text-decoration: none; height: 72px">B2B 문의하기</a>
 </div>
 </section>
 
-<a id="float-cta" href="https://forms.gle/YsHVHmTJ12rR3SC17" target="_blank" rel="noopener" data-link="inquiry" style="position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 50; display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 36px; border-radius: 999px; background: #3A302C; color: #FFFFFF; font-size: 1.0625rem; font-weight: 600; text-decoration: none; white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,0.25); transition: opacity .25s, transform .25s">B2B 문의하기</a>
+<a id="float-cta" href="inquiry.html" data-link="inquiry" style="position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 50; display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 36px; border-radius: 999px; background: #3A302C; color: #FFFFFF; font-size: 1.0625rem; font-weight: 600; text-decoration: none; white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,0.25); transition: opacity .25s, transform .25s">B2B 문의하기</a>
 <script>
 (function(){
   var f=document.getElementById('float-cta'), b=document.getElementById('bottom-cta');
